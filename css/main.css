@@ -1,0 +1,221 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to right, #1A1B41, #0a0a18);
+    
+}
+main .box-game{
+    display: flex;
+    align-items: center;
+    justify-content: start; 
+    flex-direction: column;
+    gap: 10px;
+    width: 550px;
+    height: 200px;
+    background: white;
+    box-shadow: 0px 0px 5px rgb(168, 168, 168);
+    border-radius: 5px;
+    position: relative;
+    transition: 0.5s;
+}
+.box-game .title-numer{
+    font-size: 40px;
+    margin-top: 10px;
+    padding: 20px;
+    background: linear-gradient(to right, rgb(25, 141, 250), rgb(159, 115, 241));
+    box-shadow: 0px 0px 5px rgb(14, 14, 14);
+    border-radius: 10px;
+    color: white;
+    display: none;
+}
+.box-game .pontuacao{
+    font-size: 30px;
+    display: none;
+}
+.box-game .box-options{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+.box-options .option{
+    width: 150px;
+    height: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    background: linear-gradient(to right, rgb(250, 145, 25), rgb(239, 241, 115));
+    box-shadow: 0px 0px 5px rgb(14, 14, 14);
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 70px;
+}
+.box-options .option:hover{
+    background: linear-gradient(to right, rgb(25, 141, 250), rgb(159, 115, 241)) !important;
+    scale: 1.05;
+    color: white;
+}
+.option.disable-option, .box-game button.disable-option{
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+#btn-start{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    cursor: pointer;
+    outline: none;
+    border: none;
+    font-size: 35px;
+    padding: 5px 80px;
+    border-radius: 30px;
+    background: linear-gradient(to right, rgb(25, 141, 250), rgb(159, 115, 241));
+    box-shadow: 0px 0px 10px rgb(14, 14, 14);
+    transition: 0.2s;
+    color: rgb(255, 255, 255);
+    font-size: 100px;
+}
+.box-game .buttons-box{
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+}
+.buttons-box button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    font-size: 35px;
+    padding: 5px 10px;
+    border-radius: 30px;
+    background: linear-gradient(to right, rgb(250, 145, 25), rgb(239, 241, 115));
+    box-shadow: 0px 0px 5px rgb(14, 14, 14);
+    transition: 0.2s;
+}
+#btn-embaralhar{
+    margin-left: 45%;
+}
+#btn-embaralhar i {
+    padding-top: 5px;
+}
+.box-game #btn-embaralhar:hover{
+    scale: 1.1;
+    background: linear-gradient(to right, rgba(139, 80, 12, 0.418), rgb(239, 241, 115));
+    animation: girar 1s linear infinite;
+}
+.dica-btns{
+    margin-top: 25px;
+    margin-right: 3%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#Cont-dica-text{
+    font-size: 25px;
+}
+#quant-chances-text{
+    display: none;
+    font-size: 20px;
+}
+
+.dica-box{
+    display: none;
+    align-items: center;
+    justify-content: center ;
+    position: absolute;
+    bottom: 40px;
+    left: 550px;
+    width: 200px;
+    height: 80px;
+    box-shadow: 0px 0px 5px rgb(14, 14, 14);
+    background: white;
+    z-index: 100;
+    border: none;
+    border-radius: 20px;
+}
+.dica-box .quadrado-style{
+    width: 15px;
+    height: 15px;
+    background: white;  
+    position: absolute;
+    box-shadow: -1px -1px 2px rgb(14, 14, 14);
+    left: -7px;
+    top: 50%;
+    transform: rotate(-45deg);
+}
+#dica-text{
+    font-size: 20px;
+    text-align: center;
+}
+
+
+#box-game-over{
+    width: 500px;
+    height: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: rgb(255, 255, 255);
+    box-shadow: 0px 0px 50px rgb(14, 14, 14);
+    border: none;
+    border-radius: 10px;
+}
+#box-game-over::backdrop{
+    background-color: rgba(0, 0, 0, 0.664);
+}
+.box-game-over-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 150px;
+    width: 100%;
+    height: 100%;
+}
+.box-game-over-content img{
+    width: 220px;
+    position: absolute;
+    z-index: -5;
+}
+.box-game-over-content p{
+    font-size: 50px;
+}
+#btn-recomeçar{
+    cursor: pointer;
+    outline: none;
+    border: none;
+    font-size: 35px;
+    padding: 15px 80px;
+    border-radius: 30px;
+    background: linear-gradient(to right, rgb(25, 141, 250), rgb(159, 115, 241));
+    box-shadow: 0px 0px 5px rgb(14, 14, 14);
+    transition: 0.2s;
+}
+#btn-recomeçar:hover{
+    scale: 1.1;
+    box-shadow: 0px 0px 20px rgb(14, 14, 14);
+}
+@keyframes girar{
+    from{
+        transform: rotate(0deg);
+    }to{
+        transform: rotate(-360deg);
+    }
+}
+
